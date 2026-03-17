@@ -1,23 +1,26 @@
-﻿using System;
+using System;
 using ConsoleApp1;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        Cachorro dog = new Cachorro("Rex", 100, "Pitbull");
+        //COM O init  EU POSSO INICIALIZAR A RAÇA DO CACHORRO ASSIM TAMBÉM ALTERANDO
+        Cachorro dog = new Cachorro("Rex", 100, "VIRA-LATA"){Raca = "Pitbull"};
+        //SEM O set SÓ É PERMITIDO INICIALIZAR NO CONSTRUTOR
+        //Cachorro dog = new Cachorro("Rex", 100, "VIRA-LATA");
         Console.WriteLine(dog.Nome); //aqui é o novo Get
         dog.Nome = "Simba"; //aqui é o novo Set
         Console.WriteLine(dog.Nome);
-        dog.EmitirSom();
-        dog.ExecutarTruque();
+        //raça é uma propriedade imutável "init"
+        //dog.Raca = "Mudando a Raça";//
+        Console.WriteLine($"A RAÇA DO CACHORRO É: {dog.Raca} ");
         
         var cat = new Gato("Tom", 200, "Siamês");
         Console.WriteLine(cat.Nome); //aqui é o novo Get
         cat.Nome = "Chuck"; //aqui é o novo Set
         Console.WriteLine(cat.Nome);
-        cat.EmitirSom();
-        cat.ExecutarTruque();
+       
 
         List <Animal> meusPets = new List<Animal>();
         meusPets.Add(dog);
@@ -31,6 +34,7 @@ public class Program
             pet.EmitirSom();
             //pet.ExecutarTruque(); por isso gera esse ERRO
         }
+        
         foreach (var pet in meusPets)
         {
             // 2. Apenas quem é ITreinavel faz truque (Filtragem por Interface)
