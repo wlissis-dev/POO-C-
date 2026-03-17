@@ -50,5 +50,13 @@ public class Program
                 Console.WriteLine($"{pet.Nome} não sabe fazer truques ainda.");
             }
         }
+        try
+        {
+            var Gato1 = new Gato("Xanin", -55, "Branco");
+        }
+        catch (ArgumentException e)
+        {
+            Console.WriteLine($"Erro de validação: {e.Message}");
+        }
     }
 }
