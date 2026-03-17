@@ -1,4 +1,5 @@
-﻿namespace ConsoleApp1;
+namespace ConsoleApp1.Models;
+using ConsoleApp1.Interfaces;
 
 public class Gato : Animal, ITreinavel
 {
