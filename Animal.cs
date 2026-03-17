@@ -18,7 +18,17 @@ public abstract class Animal
     public int Idade
     {
         get { return _idade; }
-        set { if (value > 0) _idade = value; }
+         set
+        {
+            if (value < 0) 
+            {
+                throw new ArgumentException("A idade nao pode ser negativa");
+            }
+            else
+            {
+                _idade = value;
+            }
+        }
     }
 
     public Animal(string nome, int idade)
