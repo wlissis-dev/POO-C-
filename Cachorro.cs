@@ -2,7 +2,15 @@
 
 public class Cachorro : Animal, ITreinavel
 {
-    public string Raca { get; set; }
+    //como faríamos para que a Raca do cachorro
+    //pudesse ser definida apenas na criação e nunca mais alterada?
+    //IMUTABILIDADE
+    
+    //public string Raca { get; set; }
+    //por que não tirar apenar o set? Porque ele vai ser obrigrado a inicializar a raça no construtor
+    
+    // Trocamos 'set' por 'init'
+    public string Raca { get; init; }
 
     // Construtor passando dados para a classe base (base)
     public Cachorro(string nome, int idade, string raca) : base(nome, idade)
